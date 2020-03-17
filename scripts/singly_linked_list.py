@@ -27,10 +27,15 @@ class singly_linked_list:
         self.length += 1
 
     def display(self):
+        if self.length == 0:
+            return None
+
         # Store data of each node in order
         elems = []
+
         # Start at head
         cur = self.head
+
         # Iterate through LL
         while cur != None:
             elems.append(cur.data)
@@ -39,13 +44,15 @@ class singly_linked_list:
 
     def get(self, index):
         # Check that index isnt out of range
-        if index > self.length:
+        if index >= self.length or index < 0:
             print("ERROR: 'Get' Index out of range!")
             return None
-        # Counter starts at 0 because we start our cursor at the head
+
         cur_idx = 0
+
         # Start at head
         cur = self.head
+
         # Iterate through singly LL
         while cur != None:
             if cur_idx == index:
@@ -55,48 +62,24 @@ class singly_linked_list:
 
     def erase(self, index):
         # Check that index isnt out of range
-        if index > self.length:
-            print("ERROR: 'Erase' Index out of range!")
+        if index >= self.length or index < 0:
+            print("ERROR: Index out of range!")
             return None
-        # Counter for current index
-        cur_idx = 0
 
-        # Start at head
-        cur = self.head
+        curr = self.get(index)
 
-        # Iterate through singly LL
-        while cur_idx < self.length:
-            # Base case: check if we're at index we're looking for
-            if cur_idx == index:
-
-                # If at the head
-                if self.head == cur:
-
-                    # If there is no following node, set head as an empty node
-                    if cur.next == None:
-                        self.head = node()
-
-                    # Otherwise, set the head as the following node and decrement length
-                    self.head = cur.next
-                    self.length -= 1
-                    return
-
-                # If not at head, get the prev node using get()
-                prev = self.get(cur_idx - 1)
-
-                # If there is no following node, set prev.next = None
-                if cur.next == None:
-                    prev.next = None
-
-                # Otherwise, set prev.next to the following node
-                else:
-                    prev.next = cur.next
-
-                # Decrement length
-                self.length -= 1
-                return
-
-            #If not at the index we're looking for, increment current node and index
-            cur = cur.next
-            cur_idx += 1
-
+        # If at head node
+        if self.head == curr:
+            if curr.next == None:
+                self.head = node()
+            else:
+                self.head = curr.next
+        else:
+            # Any non-head node
+            prev = self.get(index - 1)
+            if curr.next == None:
+                prev.next = None
+            else:
+                prev.next = curr.next
+        self.length -= 1
+        return
