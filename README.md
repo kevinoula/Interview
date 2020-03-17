@@ -13,8 +13,6 @@ Queues (Priority and Normal as child classes)
 Binary Search Tree
 
 ##### It will soon include:
-~~Queues (Just need to sit down and write it)~~
-~~Binary Search Trees~~  
-Heaps
+Heaps (Probably will not get to)
 
 
