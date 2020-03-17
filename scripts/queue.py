@@ -16,7 +16,7 @@ class queue:
         return print(result)
 
     def dequeue(self):
-        print("%s has been dequeued." %str(self.data[0]))
+        print("%s has been dequeued." % str(self.data[0]))
         self.data = self.data[1:]
 
 
@@ -26,5 +26,5 @@ class priority_queue(queue):
         top = max(self.data)
         idx = self.data.index(top)
         self.data.pop(idx)
-        print("%s has been dequeued. " %str(top))
+        print("%s has been dequeued. " % str(top))
 
