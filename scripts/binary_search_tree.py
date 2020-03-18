@@ -35,18 +35,35 @@ class binary_search_tree:
         else:
             print("Value already in tree!")
 
-    def print_tree(self):
+    def traverse_in_order(self):
         if self.root != None:
-            self._print_tree(self.root)
+            self._traverse_in_order(self.root)
 
-    def _print_tree(self,cur_node):
+    def _traverse_in_order(self, cur_node):
         if cur_node != None:
-            # recursively start at the bottom-most left value (lowest) value
-            self._print_tree(cur_node.left_child)
-            # once at the bottom-most left, print it
+            self._traverse_in_order(cur_node.left_child)
             print(str(cur_node.value))
-            # if there is a right sibbling, access it and print it as well
-            self._print_tree(cur_node.right_child)
+            self._traverse_in_order(cur_node.right_child)
+
+    def traverse_pre_order(self):
+        if self.root != None:
+            self._traverse_pre_order(self.root)
+
+    def _traverse_pre_order(self, cur_node):
+        if cur_node != None:
+            print(str(cur_node.value))
+            self._traverse_pre_order(cur_node.left_child)
+            self._traverse_pre_order(cur_node.right_child)
+
+    def traverse_post_order(self):
+        if self.root != None:
+            self._traverse_post_order(self.root)
+
+    def _traverse_post_order(self, cur_node):
+        if cur_node != None:
+            self._traverse_post_order(cur_node.left_child)
+            self._traverse_post_order(cur_node.right_child)
+            print(str(cur_node.value))
 
     def height(self):
         if self.root != None:
