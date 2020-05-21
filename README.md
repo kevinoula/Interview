@@ -12,6 +12,9 @@ Doubly linked list
 Queues (Priority and Normal as child classes)  
 Binary Search Tree
 
+##### It will soon include:
+Heaps (Probably will not get to)
+
 
 ### Practice Classes
 `anagram.py:` Checks if two strings are anagrams of another  
@@ -21,8 +24,5 @@ Binary Search Tree
 `card.py:` Model a credit and debit card class (Was actually asked this in the interview)  
 `date_conversion.py:` Date-to-word conversion challenge
 
-
-##### It will soon include:
-Heaps (Probably will not get to)
 
 
