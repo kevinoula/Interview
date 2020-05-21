@@ -12,6 +12,15 @@ Doubly linked list
 Queues (Priority and Normal as child classes)  
 Binary Search Tree
 
+
+### Practice Classes
+`book.py:` Models a bookstore selling books  
+`coin_change.py:` Classic coin change problem using greedy method
+`palindrome.py:` Simple string palindrome checker  
+`card.py:` Model a credit and debit card class (Was actually asked this in the interview)  
+`date_conversion.py:` Date-to-word conversion challenge
+
+
 ##### It will soon include:
 Heaps (Probably will not get to)
 
