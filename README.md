@@ -1,4 +1,4 @@
-# Data Structures
+# Data Structures and Class Design
 ### What is this?
 Since I'm studying for interviews right now, I figured it would be helpful to compile everything together.
 This is how I've been practicing my implementation!
